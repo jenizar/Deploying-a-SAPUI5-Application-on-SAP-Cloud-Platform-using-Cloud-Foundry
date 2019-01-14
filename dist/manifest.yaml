@@ -1,0 +1,5 @@
+---
+applications:
+- name: sapui5-launchpad
+  memory: 64M
+  buildpack: staticfile_buildpack

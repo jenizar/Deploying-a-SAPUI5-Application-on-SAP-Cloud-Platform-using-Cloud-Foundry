@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+	<meta charset="UTF-8"/>
+	
+	<title>Transaction Menu</title>
+
+  <!-- Load UI5, select gold reflection theme and the "commons" and "table" control libraries -->
+  <script id='sap-ui-bootstrap' type='text/javascript'
+    src='https://openui5.hana.ondemand.com/resources/sap-ui-core.js'
+    data-sap-ui-theme='sap_bluecrystal'
+    data-sap-ui-libs='sap.ui.commons,sap.ui.table,sap.m'>
+	</script>
+
+	<script type="text/javascript">
+
+		jQuery.sap.require("sap.ui.core.IconPool");
+		
+		function handlePress1(oEvent1) {
+			//alert('tile ' + oEvent.oSource.getTitle() + ' pressed');
+			window.location.assign("http://sapui5.comyr.com/contacts.html")
+		}
+
+		function handlePress2(oEvent2) {
+			//alert('tile ' + oEvent.oSource.getTitle() + ' pressed');
+			window.location.assign("http://sapui5.comyr.com/crud/menu.html")
+		}		
+		
+		function handlePress3(oEvent3) {
+			//alert('tile ' + oEvent.oSource.getTitle() + ' pressed');
+			window.location.assign("http://sapui5.comyr.com/kurs.html")
+		}
+
+		function handlePress4(oEvent4) {
+			//alert('tile ' + oEvent.oSource.getTitle() + ' pressed');
+			window.location.assign("http://sapui5.comyr.com/app1/index.html")
+		}
+			
+		var tiles = new Array();
+		
+		var worstCase = new sap.m.StandardTile("worst_case", {
+			icon : sap.ui.core.IconPool.getIconURI("contacts"),
+			number : "JSON",
+			numberUnit : "OData",
+			title : "List of Board Members",
+			info : "Consume OData",
+			infoState : "Success",
+			press : handlePress1
+		});
+		tiles.push(worstCase);
+
+		var crudList = new sap.m.StandardTile("crud_list", {
+			icon : sap.ui.core.IconPool.getIconURI("contacts"),
+			number : "CRUD",
+			numberUnit : "Contacts",
+			title : "Create, Read, Update, Delete",
+			info : "Consume MySQL DB",
+			infoState : "Success",
+			press : handlePress2
+		});
+		tiles.push(crudList);
+		
+		var largeNum = new sap.m.StandardTile("large_num", {
+			icon : sap.ui.core.IconPool.getIconURI("lead"),
+			number : "Rp",
+			numberUnit : "$",
+			title : "Foreign Exchange Rate",
+			info : "Currency Rate",
+			infoState : "Success",
+			press : handlePress3			
+		});
+		tiles.push(largeNum);
+		
+		var mediumNum = new sap.m.StandardTile("medium_num", {
+			icon : sap.ui.core.IconPool.getIconURI("order-status"),
+			number : "Master",
+			numberUnit : "Detail",
+			title : "Sales Distribution",
+			info : "Sales Report",
+			infoState : "Warning",
+			press : handlePress4			
+		});
+		tiles.push(mediumNum);
+		
+		var titleOnly = new sap.m.StandardTile("title_only", {
+			icon : sap.ui.core.IconPool.getIconURI("sales-quote"),
+			number : "3780,8",
+			numberUnit : "EURO",
+			title : "Purchase Orders",
+			info : "PO Report",
+			infoState : "Warning"		
+		});
+		tiles.push(titleOnly);
+		
+		
+		var iconOnlyTopRow = new sap.m.StandardTile("icon_only_top_row", {
+			type : "Create",
+			title : "Create Purchase Orders",
+			info : "4 Requisitions Released"
+		});
+		tiles.push(iconOnlyTopRow);
+		
+		var iconTitle = new sap.m.StandardTile("icon_title", {
+			icon : sap.ui.core.IconPool.getIconURI("inbox"),
+			title : "Open Purchase Orders",
+			type : "Monitor"
+		});
+		tiles.push(iconTitle);		
+		
+		var iconNumTitle = new sap.m.StandardTile("icon_num_title", {
+			icon : sap.ui.core.IconPool.getIconURI("inbox"),
+			number : "2226,3",
+			numberUnit : "euro",
+			title : "Late Purchase Orders"
+		});
+		tiles.push(iconNumTitle);	
+		
+		var iconNumTitleInfo = new sap.m.StandardTile("icon_num_title_info", {
+			icon : sap.ui.core.IconPool.getIconURI("inbox"),
+			number : "1790,7",
+			numberUnit : "euro",			
+			title : "Overdue Purchase Requisitions",
+			info : "PR Maturiy",
+			infoState : "Error"
+		});
+		tiles.push(iconNumTitleInfo);		
+		
+		var numericallyLargeNum = new sap.m.StandardTile("numerically_large_num", {
+			icon : sap.ui.core.IconPool.getIconURI("sales-order"),
+			number : "1084,9",
+			numberUnit : "euro",
+			title : "Sales Orders",
+			info : "Sales Orders Report",
+			infoState : "Success"
+		});
+		tiles.push(numericallyLargeNum);		
+				
+		var tc = new sap.m.TileContainer("tc",{
+			tiles : tiles
+		});
+		var app = new sap.m.App();
+		var page = new sap.m.Page({});
+				
+		page.setEnableScrolling(false);	
+		app.setInitialPage(page.getId());	
+		page.setShowHeader(true);
+			
+		app.addPage(page);			
+		page.setTitle("Transaction Menu"); 		
+		page.addContent(tc);
+
+							app.setBackgroundImage("monas.jpg");
+							app.setBackgroundColor("");
+							app.setBackgroundOpacity(1);
+							app.setBackgroundRepeat(false);
+							
+			function showData(oEvent) {
+				
+	//			oTileContainer.destroyTiles();
+	//			oSuggestInput.setValue();
+				
+			}
+			
+		app.placeAt('body');
+</script>
+
+</head>
+<body id="body" class="sapUiBody">
+</body>
+</html>
