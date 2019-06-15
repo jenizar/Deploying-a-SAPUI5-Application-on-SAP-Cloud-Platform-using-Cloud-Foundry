@@ -1,6 +1,7 @@
 # Deploying-a-SAPUI5-Application-on-SAP-Cloud-Platform-using-Cloud-Foundry
 Deploying a SAPUI5 Application on SAP Cloud Platform using Cloud Foundry
 
+![alt text](https://github.com/jenizar/Deploying-a-SAPUI5-Application-on-SAP-Cloud-Platform-using-Cloud-Foundry/blob/master/images/sapui5-launchpad.png)
 
 Youtube video :
 https://youtu.be/g1Ern1FNj5s
